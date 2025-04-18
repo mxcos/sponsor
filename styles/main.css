@@ -1,0 +1,271 @@
+:root {
+    --primary-color: #ffd886;
+    --text-color: #333;
+    --border-color: #ddd;
+    --hover-color: rgba(204, 217, 220, 0.3);
+    --transition-duration: 0.3s;
+    --box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, html>body {
+    margin: 0px !important;
+    padding: 0px !important;
+    height: 100%;
+    width: 100%;
+    background: transparent;
+}
+
+body {
+    font-family: "Helvetica Neue", Ubuntu, "WenQuanYi Micro Hei", Helvetica, "Hiragino Sans GB", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Micro Hei Mono", "WenQuanYi Zen Hei", "WenQuanYi Zen Hei", "Apple LiGothic Medium", "SimHei", "ST Heiti", "WenQuanYi Zen Hei Sharp", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.8em;
+    text-shadow: 0 0 1px rgba(255,255,255,0.1);
+    background: transparent;
+}
+
+.app-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: transparent;
+    overflow: hidden;
+}
+
+#app {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: transparent;
+    overflow: hidden;
+}
+
+.donation-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+
+.donation-container.blur {
+    filter: blur(3px);
+    -webkit-filter: blur(3px);
+}
+
+.donation-header {
+    margin-bottom: 2rem;
+}
+
+.donation-title {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #ffd886;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.donation-subtitle {
+    font-size: 1rem;
+    color: #333;
+    opacity: 0.8;
+}
+
+.donation-methods {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.donation-method {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    -webkit-filter: grayscale(1);
+    filter: grayscale(1);
+    opacity: 0.5;
+}
+
+.donation-method:hover {
+    background: rgba(204, 217, 220, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    -webkit-filter: grayscale(0);
+    filter: grayscale(0);
+    opacity: 1;
+}
+
+.method-icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 0.5rem;
+}
+
+.method-name {
+    font-size: 0.9rem;
+    color: #333;
+}
+
+.qrcode-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    perspective: 400px;
+}
+
+.qrcode-modal.show {
+    display: flex;
+}
+
+.qrcode-content {
+    position: relative;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    box-shadow: 0px 2px 7px rgba(0,0,0,0.3);
+    text-align: center;
+    opacity: 0;
+    transform-style: preserve-3d;
+    transform-origin: center center;
+}
+
+.qrcode-content.show {
+    opacity: 1;
+    animation: showQR 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.qrcode-content.hide {
+    animation: hideQR 0.6s cubic-bezier(0.36, 0, 0.66, -0.56) forwards;
+}
+
+.qrcode-image {
+    width: 240px;
+    height: 240px;
+    display: block;
+    margin: 0 auto;
+}
+
+.close-button {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    width: 24px;
+    height: 24px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+    color: #333;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+.close-button:hover {
+    opacity: 1;
+}
+
+@keyframes showQR {
+    from {
+        transform: rotateX(45deg);
+    }
+    33% {
+        opacity: 1;
+        transform: rotateX(-10deg);
+    }
+    66% {
+        opacity: 1;
+        transform: rotateX(5deg);
+    }
+    to {
+        opacity: 1;
+        transform: rotateX(0);
+    }
+}
+
+@keyframes hideQR {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+    40% {
+        transform: scale(1.03);
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+}
+
+.github-link {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    opacity: 0.3;
+    transition: opacity 0.3s ease;
+}
+
+.github-link:hover {
+    opacity: 0.8;
+}
+
+.github-link img {
+    width: 48px;
+    height: 48px;
+}
+
+/* 工具提示样式 */
+[data-tooltip] {
+    position: relative;
+}
+
+[data-tooltip]:before {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.5rem;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-duration) ease;
+}
+
+[data-tooltip]:hover:before {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(-0.5rem);
+} 

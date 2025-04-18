@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>支持我 | Support Me</title>
+    <meta name="description" content="感谢您的支持！Thank you for your support!">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="icon" href="assets/images/icons/like.svg">
+</head>
+<body>
+    <div id="app">
+        <!-- 背景动画容器 -->
+    </div>
+
+    <div class="donation-container">
+        <div class="donation-header">
+            <h1 class="donation-title">支持我</h1>
+            <p class="donation-subtitle">感谢您的支持！</p>
+        </div>
+
+        <div class="donation-methods">
+            <button class="donation-method" id="wechat" data-tooltip="点击查看微信收款码">
+                <img src="assets/images/icons/wechat.svg" alt="微信支付" class="method-icon">
+                <span class="method-name">微信支付</span>
+            </button>
+            <button class="donation-method" id="alipay" data-tooltip="点击查看支付宝收款码">
+                <img src="assets/images/icons/alipay.svg" alt="支付宝" class="method-icon">
+                <span class="method-name">支付宝</span>
+            </button>
+        </div>
+    </div>
+
+    <div class="qrcode-modal" id="qrcodeModal">
+        <div class="qrcode-content">
+            <img src="" alt="收款码" id="qrcodeImage" class="qrcode-image">
+            <button class="close-button" id="closeQrcode">×</button>
+        </div>
+    </div>
+
+    <a href="https://github.com/mxcos" class="github-link" target="_blank" rel="noopener noreferrer">
+        <img src="assets/images/icons/github.svg" alt="GitHub">
+    </a>
+
+    <script src="https://cdn.jsdelivr.net/npm/janvas"></script>
+    <script src="scripts/animation.js"></script>
+    <script src="scripts/main.js"></script>
+</body>
+</html> 
