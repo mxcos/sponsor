@@ -13,7 +13,7 @@
 - 🛠️ 开发 **[项目名]**——[用一句话说明项目价值]  
 
 #### **📫 找到我**  
-[![邮箱](https://img.shields.io/badge/-Email-D14836?style=flat&logo=gmail&logoColor=white)](mailto:23925493@qq.com)  
+[![邮箱](https://img.shields.io/badge/-Email-D14836?style=flat&logo=gmail&logoColor=white)](mailto:hackettice@hotmail.com)  
 
 > **"**[用开源反哺开源，以工程思维解决问题]**"**  
 
